@@ -1,0 +1,31 @@
+void swap(int *a,int *b)
+{
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
+
+void sort012(int arr[], int n)
+{
+    int l=0;
+    int r=n-1;
+    int mid=0;
+    while(mid<=r)
+    {
+        if(arr[mid]==0)
+        {
+            swap(&arr[mid],&arr[l]);
+            l++;
+            mid++;
+        }
+        else if(arr[mid]==1)
+        {
+            mid++;
+        }
+        else
+        {
+            swap(&arr[mid],&arr[r]);
+            r--;
+        }
+    }
+}
